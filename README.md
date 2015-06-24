@@ -11,7 +11,8 @@
 ===============
 简单使用：
 ![image](./CFSegmentControl/show2.gif)<br />
-<br />
+<br /><br />
+
 项目实战：特别提示，此控件用于自定义复杂分段！基本功能请使用系统控件。
 ![image](./CFSegmentControl/show3.gif)<br />
 <br />
