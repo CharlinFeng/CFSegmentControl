@@ -76,9 +76,9 @@
 #### 2. oc使用：
     CFSegmentControl *control = [[CFSegmentControl alloc] initWithItemsClosure:^NSArray *{
     
-            //返回一个btn数组即可
+        //返回一个btn数组即可
             
-            //实际使用Btn请封装普通样式及选中样式
+        //实际使用Btn请封装普通样式及选中样式
         UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn1 setTitle:@"按钮一" forState:UIControlStateNormal];
         [btn1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
