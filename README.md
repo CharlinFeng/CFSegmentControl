@@ -85,6 +85,8 @@
 
     CFSegmentControl *control = [[CFSegmentControl alloc] initWithItemsClosure:^NSArray *{
         
+        //此处btn为实际项目封装效果，你也需要根据你自己的设计图封装
+        
         //选项一
         CommentBtn *btn1 = [CommentBtn buttonWithTitle:@"好评" bgColor:hexColor(46b46e)];
         
