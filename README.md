@@ -40,6 +40,9 @@
 #### 1. swift使用：
         var control1 = CFSegmentControl(itemsClosure: { () -> NSArray in
             
+            //返回一个btn数组即可
+            
+            //实际使用Btn请封装普通样式及选中样式
             var btn1 = UIButton()
             btn1.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
             btn1.setTitleColor(UIColor.redColor(), forState: UIControlState.Selected)
@@ -72,8 +75,10 @@
 
 #### 2. oc使用：
     CFSegmentControl *control = [[CFSegmentControl alloc] initWithItemsClosure:^NSArray *{
-        
-        //实际使用Btn请封装
+    
+            //返回一个btn数组即可
+            
+            //实际使用Btn请封装普通样式及选中样式
         UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn1 setTitle:@"按钮一" forState:UIControlStateNormal];
         [btn1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
