@@ -15,6 +15,7 @@
 		89B55E451B3A7E7F00D4A4DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B55E441B3A7E7F00D4A4DB /* ViewController.swift */; };
 		89B55E471B3A7E8900D4A4DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B55E461B3A7E8900D4A4DB /* Main.storyboard */; };
 		89B55E491B3A7E8F00D4A4DB /* show2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 89B55E481B3A7E8F00D4A4DB /* show2.gif */; };
+		89D9D5DC1B3AB1C7001EB491 /* show3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 89D9D5DB1B3AB1C7001EB491 /* show3.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		89B55E441B3A7E7F00D4A4DB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		89B55E461B3A7E8900D4A4DB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		89B55E481B3A7E8F00D4A4DB /* show2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = show2.gif; sourceTree = "<group>"; };
+		89D9D5DB1B3AB1C7001EB491 /* show3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = show3.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		89B55E1F1B3A7E5A00D4A4DB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				89D9D5DB1B3AB1C7001EB491 /* show3.gif */,
 				89B55E481B3A7E8F00D4A4DB /* show2.gif */,
 				89B55E201B3A7E5A00D4A4DB /* Info.plist */,
 			);
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89B55E491B3A7E8F00D4A4DB /* show2.gif in Resources */,
+				89D9D5DC1B3AB1C7001EB491 /* show3.gif in Resources */,
 				89B55E471B3A7E8900D4A4DB /* Main.storyboard in Resources */,
 				89B55E2C1B3A7E5A00D4A4DB /* LaunchScreen.xib in Resources */,
 				89B55E291B3A7E5A00D4A4DB /* Images.xcassets in Resources */,
@@ -421,6 +425,7 @@
 				89B55E3D1B3A7E5A00D4A4DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89B55E3E1B3A7E5A00D4A4DB /* Build configuration list for PBXNativeTarget "CFSegmentControlTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +434,7 @@
 				89B55E401B3A7E5A00D4A4DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

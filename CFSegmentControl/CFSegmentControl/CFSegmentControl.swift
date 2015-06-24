@@ -18,7 +18,7 @@ public class CFSegmentControl: UIView {
     
     private var clickItemAtIndex: ((selectedIndex: Int)->Void)?
 
-    init(itemsClosure: (()->NSArray)?, clickItemAtIndex:((selectedIndex: Int)->Void)?){
+    public init(itemsClosure: (()->NSArray)?, clickItemAtIndex:((selectedIndex: Int)->Void)?){
    
         super.init(frame: CGRectZero)
         
