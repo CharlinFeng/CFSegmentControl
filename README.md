@@ -9,7 +9,7 @@
 
 框架截图 CUT
 ===============
-简单使用：
+基本功能演示：<br />
 ![image](./CFSegmentControl/show2.gif)<br />
 <br /><br />
 
