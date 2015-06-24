@@ -82,42 +82,30 @@
 
 
 #### 2. oc使用：
+
     CFSegmentControl *control = [[CFSegmentControl alloc] initWithItemsClosure:^NSArray *{
-    
-        //返回一个btn数组即可
-            
-        //实际使用Btn请封装普通样式及选中样式
-        UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn1 setTitle:@"按钮一" forState:UIControlStateNormal];
-        [btn1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        [btn1 setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
         
-        UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn2 setTitle:@"按钮二" forState:UIControlStateNormal];
-        [btn2 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        [btn2 setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+        //选项一
+        CommentBtn *btn1 = [CommentBtn buttonWithTitle:@"好评" bgColor:hexColor(46b46e)];
         
-        UIButton *btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn3 setTitle:@"按钮三" forState:UIControlStateNormal];
-        [btn3 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        [btn3 setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+        //选项二
+        CommentBtn *btn2 = [CommentBtn buttonWithTitle:@"基本满意" bgColor:hexColor(f3c152)];
         
-        UIButton *btn4 = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn4 setTitle:@"按钮四" forState:UIControlStateNormal];
-        [btn4 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        [btn4 setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
-        
-        return @[btn1,btn2,btn3,btn4];
+        //选项三
+        CommentBtn *btn3 = [CommentBtn buttonWithTitle:@"有待提高" bgColor:hexColor(898989)];
+
+        return @[btn1,btn2,btn3];
         
     } clickItemAtIndex:^(NSInteger index) {
-        NSLog(@"当前:%@",@(index));
+        
+        NSLog(@"选中%@",@(index));
+        
     }];
+        
+    [self.segContentView addSubview:control];
     
-    control.frame = CGRectMake(0, 0, 320, 60);
-    
-    control.layer.borderColor = [UIColor brownColor].CGColor;
-    control.layer.borderWidth = 1;
-    [self.view addSubview:control];
+    //添加约束
+    [control masViewAddConstraintMakeEqualSuperViewWithInsets:UIEdgeInsetsZero];
     
 
 <br/><br/>
