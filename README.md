@@ -45,6 +45,21 @@
 使用说明 USAGE
 ===============
 
+友盟文档：http://dev.umeng.com/social/ios/detail-share#1
+
+SSO授权需要link以下系统libraries:
+Security.framework
+libiconv.dylib
+SystemConfiguration.framework
+CoreGraphics.Framework
+libsqlite3.dylib
+CoreTelephony.framework
+libstdc++.dylib
+libz.dylib
+
+设置URL SCHEME 请参考官方文档。
+
+
 #### 1. swift使用：
         var control1 = CFSegmentControl(itemsClosure: { () -> NSArray in
             
