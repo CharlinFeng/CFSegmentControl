@@ -17,19 +17,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var control1 = CFSegmentControl(itemsClosure: { () -> NSArray in
+        let control1 = CFSegmentControl(itemsClosure: { () -> NSArray in
             
-            var btn1 = UIButton()
+            let btn1 = UIButton()
             btn1.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
             btn1.setTitleColor(UIColor.redColor(), forState: UIControlState.Selected)
             btn1.setTitle("按钮一", forState: UIControlState.Normal)
             
-            var btn2 = UIButton()
+            let btn2 = UIButton()
             btn2.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
             btn2.setTitle("按钮二", forState: UIControlState.Normal)
             btn2.setTitleColor(UIColor.redColor(), forState: UIControlState.Selected)
             
-            var btn3 = UIButton()
+            let btn3 = UIButton()
             btn3.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
             btn3.setTitleColor(UIColor.redColor(), forState: UIControlState.Selected)
             btn3.setTitle("按钮三", forState: UIControlState.Normal)
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
             
         }) { (selectedIndex) -> Void in
             
-            println("选中\(selectedIndex)")
+            print("选中\(selectedIndex)")
         }
         
 
@@ -52,9 +52,9 @@ class ViewController: UIViewController {
     }
     
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        println("当前值:\(self.control1?.selectedIndex)")
+        print("当前值:\(self.control1?.selectedIndex)")
     }
     
 

@@ -29,7 +29,7 @@ public class CFSegmentControl: UIView {
         self.clickItemAtIndex = clickItemAtIndex
     }
 
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -52,9 +52,9 @@ public class CFSegmentControl: UIView {
         
         if self.items == nil {return}
         
-        for (index,obj) in enumerate(self.items!){
+        for (index,obj) in (self.items!).enumerate(){
             
-            var btn =  obj as! UIButton
+            let btn =  obj as! UIButton
             
             btn.tag = index
             self.addSubview(btn)
@@ -69,18 +69,18 @@ public class CFSegmentControl: UIView {
         
         if self.items == nil {return}
         
-        var rect = self.bounds
-        var width = rect.size.width / CGFloat(self.items!.count)
-        var height = rect.size.height
-        for (index,obj) in enumerate(self.items!){
+        let rect = self.bounds
+        let width = rect.size.width / CGFloat(self.items!.count)
+        let height = rect.size.height
+        for (index,obj) in (self.items!).enumerate(){
             
-            var btn =  obj as! UIButton
+            let btn =  obj as! UIButton
             
             let x = width * CGFloat(index)
             
             let y: CGFloat = 0
             
-            var btnF = CGRectMake(x, y, width, height)
+            let btnF = CGRectMake(x, y, width, height)
             
             btn.frame = btnF
         }
