@@ -1,19 +1,18 @@
 # CFSegmentControl
 双版本分段选取控件
------
-    Charlin出框架的目标：简单、易用、实用、高度封装、绝对解耦！
-    
------
+
 
 <br /><br />
 
 框架截图 CUT
 ===============
-基本功能演示：<br />
+基本功能演示：
+<br />
 ![image](./CFSegmentControl/show2.gif)<br />
 <br /><br />
 
 项目实战：特别提示，此控件用于自定义复杂分段！基本功能请使用系统控件。
+<br />
 ![image](./CFSegmentControl/show3.gif)<br />
 <br />
 
@@ -89,7 +88,4 @@ libz.dylib
         self.view.addSubview(control)
         self.control = control
 
-
-
-<br/><br/>
 
