@@ -21,10 +21,6 @@
 框架说明 EXPLAIN
 ===============
 本框架以swift语言开发，但swift和oc均可使用。框架不在简单与复杂，在于功能实用。<br />
-成都iOS开发群：<br />
-二群：369870753（新开，新鲜着呢，快加） <br />
-一群：163865401（已爆满，加不上了）  <br /><br />
-
 
 <br />
 
@@ -61,71 +57,39 @@ libz.dylib
 
 
 #### 1. swift使用：
-        var control1 = CFSegmentControl(itemsClosure: { () -> NSArray in
+
+       let control = CFSegmentControl()
+        
+        let btn1 = UIButton()
+        btn1.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+        btn1.setTitleColor(UIColor.redColor(), forState: UIControlState.Selected)
+        btn1.setTitle("按钮一", forState: UIControlState.Normal)
+        
+        let btn2 = UIButton()
+        btn2.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+        btn2.setTitle("按钮二", forState: UIControlState.Normal)
+        btn2.setTitleColor(UIColor.redColor(), forState: UIControlState.Selected)
+        
+        let btn3 = UIButton()
+        btn3.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
+        btn3.setTitleColor(UIColor.redColor(), forState: UIControlState.Selected)
+        btn3.setTitle("按钮三", forState: UIControlState.Normal)
+        
+        control.btns = [btn1,btn2,btn3]
             
-            //返回一个btn数组即可
+        control.clickItemAtIndex = { (selectedIndex) -> Void in
             
-            //实际使用Btn请封装普通样式及选中样式
-            var btn1 = UIButton()
-            btn1.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
-            btn1.setTitleColor(UIColor.redColor(), forState: UIControlState.Selected)
-            btn1.setTitle("按钮一", forState: UIControlState.Normal)
-            
-            var btn2 = UIButton()
-            btn2.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
-            btn2.setTitle("按钮二", forState: UIControlState.Normal)
-            btn2.setTitleColor(UIColor.redColor(), forState: UIControlState.Selected)
-            
-            var btn3 = UIButton()
-            btn3.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
-            btn3.setTitleColor(UIColor.redColor(), forState: UIControlState.Selected)
-            btn3.setTitle("按钮三", forState: UIControlState.Normal)
-            
-            return [btn1,btn2,btn3]
-            
-        }) { (selectedIndex) -> Void in
-            
-            println("选中\(selectedIndex)")
+            print("选中\(selectedIndex)")
         }
+        
+        
+        control.frame = CGRectMake(0, 200, 320, 80)
+        control.layer.borderWidth = 2
+        control.layer.borderColor = UIColor.orangeColor().CGColor
+        self.view.addSubview(control)
+        self.control = control
 
-        control1.frame = CGRectMake(0, 200, 320, 80)
-        control1.layer.borderWidth = 2
-        control1.layer.borderColor = UIColor.orangeColor().CGColor
-        self.view.addSubview(control1)
-        self.control1 = control1
 
-
-
-#### 2. oc使用：
-
-    CFSegmentControl *control = [[CFSegmentControl alloc] initWithItemsClosure:^NSArray *{
-        
-        //此处btn为实际项目封装效果，你也需要根据你自己的设计图封装
-        
-        //选项一
-        CommentBtn *btn1 = [CommentBtn buttonWithTitle:@"好评" bgColor:hexColor(46b46e)];
-        
-        //选项二
-        CommentBtn *btn2 = [CommentBtn buttonWithTitle:@"基本满意" bgColor:hexColor(f3c152)];
-        
-        //选项三
-        CommentBtn *btn3 = [CommentBtn buttonWithTitle:@"有待提高" bgColor:hexColor(898989)];
-
-        return @[btn1,btn2,btn3];
-        
-    } clickItemAtIndex:^(NSInteger index) {
-        
-        NSLog(@"选中%@",@(index));
-        
-    }];
-        
-    [self.segContentView addSubview:control];
-    
-    //添加约束
-    [control masViewAddConstraintMakeEqualSuperViewWithInsets:UIEdgeInsetsZero];
-    
 
 <br/><br/>
-版权 RIGHTS
-===============
-本框架由冯成林原创，保留一切权利！
+
