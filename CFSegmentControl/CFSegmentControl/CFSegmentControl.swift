@@ -10,29 +10,14 @@ import UIKit
 
 public class CFSegmentControl: UIView {
     
-    private var items: NSArray?
-    
     private var selectedBtn: UIButton?
     
     var selectedIndex: Int = 0
     
-    private var clickItemAtIndex: ((selectedIndex: Int)->Void)?
-
-    public init(itemsClosure: (()->NSArray)?, clickItemAtIndex:((selectedIndex: Int)->Void)?){
-   
-        super.init(frame: CGRectZero)
-        
-        //记录
-        self.items = itemsClosure?()
-        //添加按钮
-        self.btnAdd()
-        self.clickItemAtIndex = clickItemAtIndex
-    }
-
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+    var btns: [UIButton]! {didSet{btnAdd()}}
     
+    var clickItemAtIndex: ((selectedIndex: Int)->Void)?
+
     
     /** 事件 */
     func btnClick(btn: UIButton){
@@ -50,15 +35,15 @@ public class CFSegmentControl: UIView {
     /** 添加按钮 */
     func btnAdd(){
         
-        if self.items == nil {return}
+        if self.btns == nil {return}
         
-        for (index,obj) in (self.items!).enumerate(){
+        for (index,obj) in (self.btns).enumerate(){
             
-            let btn =  obj as! UIButton
+            let btn =  obj
             
             btn.tag = index
             self.addSubview(btn)
-            btn.addTarget(self, action: Selector("btnClick:"), forControlEvents: UIControlEvents.TouchUpInside)
+            btn.addTarget(self, action: Selector("btnClick:"), forControlEvents: UIControlEvents.TouchDown)
             if index == 0 {self.btnClick(btn)}
         }
     }
@@ -67,14 +52,14 @@ public class CFSegmentControl: UIView {
     //布局
     override public func layoutSubviews() {
         
-        if self.items == nil {return}
+        if self.btns == nil {return}
         
         let rect = self.bounds
-        let width = rect.size.width / CGFloat(self.items!.count)
+        let width = rect.size.width / CGFloat(self.btns!.count)
         let height = rect.size.height
-        for (index,obj) in (self.items!).enumerate(){
+        for (index,obj) in (self.btns!).enumerate(){
             
-            let btn =  obj as! UIButton
+            let btn =  obj
             
             let x = width * CGFloat(index)
             
