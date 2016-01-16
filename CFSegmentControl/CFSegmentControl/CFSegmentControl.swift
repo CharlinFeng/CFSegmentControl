@@ -12,11 +12,11 @@ public class CFSegmentControl: UIView {
     
     private var selectedBtn: UIButton?
     
-    var selectedIndex: Int = 0
+    var selectedIndex: Int = 0{didSet{indexSelectedAction()}}
     
     var btns: [UIButton]! {didSet{btnAdd()}}
     
-    var clickItemAtIndex: ((selectedIndex: Int)->Void)?
+    var clickItemAtIndex: ((Int)->Void)?
 
     
     /** 事件 */
@@ -28,7 +28,15 @@ public class CFSegmentControl: UIView {
         btn.selected = true
         self.selectedBtn = btn
         self.selectedIndex = btn.tag
-        self.clickItemAtIndex?(selectedIndex: self.selectedIndex)
+        self.clickItemAtIndex?(self.selectedIndex)
+    }
+    
+    func indexSelectedAction(){
+        if selectedIndex >= btns.count {return}
+        let currentBtn = btns[selectedIndex]
+        self.selectedBtn?.selected = false
+        currentBtn.selected = true
+        self.selectedBtn = currentBtn
     }
     
 
@@ -44,7 +52,6 @@ public class CFSegmentControl: UIView {
             btn.tag = index
             self.addSubview(btn)
             btn.addTarget(self, action: Selector("btnClick:"), forControlEvents: UIControlEvents.TouchDown)
-            if index == 0 {self.btnClick(btn)}
         }
     }
     
@@ -68,6 +75,9 @@ public class CFSegmentControl: UIView {
             let btnF = CGRectMake(x, y, width, height)
             
             btn.frame = btnF
+            
+            
+            if index == 0 {self.btnClick(btn)}
         }
     }
 

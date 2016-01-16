@@ -33,7 +33,10 @@ class ViewController: UIViewController {
         btn3.setTitleColor(UIColor.grayColor(), forState: UIControlState.Normal)
         btn3.setTitleColor(UIColor.redColor(), forState: UIControlState.Selected)
         btn3.setTitle("按钮三", forState: UIControlState.Normal)
-        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW,Int64(4 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), { () -> Void in
+            print("来了")
+            control.selectedIndex = 2
+        })
         control.btns = [btn1,btn2,btn3]
             
         control.clickItemAtIndex = { (selectedIndex) -> Void in
