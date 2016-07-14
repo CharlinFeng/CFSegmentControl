@@ -17,7 +17,7 @@ public class CFSegmentControl: UIView {
     var btns: [UIButton]! {didSet{btnAdd()}}
     
     var clickItemAtIndex: ((Int)->Void)?
-
+    
     
     /** 事件 */
     func btnClick(btn: UIButton){
@@ -39,7 +39,7 @@ public class CFSegmentControl: UIView {
         self.selectedBtn = currentBtn
     }
     
-
+    
     /** 添加按钮 */
     func btnAdd(){
         
@@ -52,6 +52,7 @@ public class CFSegmentControl: UIView {
             btn.tag = index
             self.addSubview(btn)
             btn.addTarget(self, action: Selector("btnClick:"), forControlEvents: UIControlEvents.TouchDown)
+            if index == 0 {btn.selected = true;selectedBtn = btn}
         }
     }
     
@@ -77,8 +78,8 @@ public class CFSegmentControl: UIView {
             btn.frame = btnF
             
             
-            if index == 0 {self.btnClick(btn)}
+            //            if index == 0 {self.btnClick(btn)}
         }
     }
-
+    
 }
